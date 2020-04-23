@@ -13,7 +13,11 @@ class AbstractParent(ABC):
         print("I have added additional method to abstact class")
 
 
-class Mother:
+class Mother(AbstractParent, ABC):
+
+    def one_additional_method_that_zveres_asked_to_add(self):
+        print("This additional method is called from mother class ")
+
     def __init__(self, age):
         self.age = age
         print("mother constructor")
@@ -26,7 +30,7 @@ class Mother:
         print("listening music")
 
 
-class Father(AbstractParent):
+class Father(AbstractParent, ABC):
     def play_guitar(self):
         print("father is playing guitar")
 
